@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<t t-name="PosCurrencyWidget" owl="1">
+    <div class="pos-currency-widget">
+        <div class="primary-rate">
+            <t t-esc="state.primaryRate"/>
+        </div>
+        <div class="secondary-rate">
+            <t t-esc="state.secondaryRate"/>
+        </div>
+        <button class="toggle-mode" t-on-click="toggleMode">
+            Toggle Mode
+        </button>
+    </div>
+</t>
