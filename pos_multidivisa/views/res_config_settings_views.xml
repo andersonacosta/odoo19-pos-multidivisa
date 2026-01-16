@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_res_config_settings_form_pos_multidivisa" model="ir.ui.view">
+        <field name="name">res.config.settings.pos.multidivisa</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='settings']" position="inside">
+                <div class="app_settings_block" data-string="POS Multi-Divisa">
+                    <h2>Moneda Operativa</h2>
+                    <div class="row mt16 o_settings_container">
+                        <field name="operational_currency_id" widget="many2one"/>
+                        <field name="currency_usd_manual"/>
+                        <field name="manual_usd_rate"/>
+                        <field name="currency_eur_manual"/>
+                        <field name="manual_eur_rate"/>
+                        <field name="igft_enabled"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
