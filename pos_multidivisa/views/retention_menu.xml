@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="action_account_move_with_retention" model="ir.actions.act_window">
+    <field name="name">Retenciones</field>
+    <field name="res_model">account.move</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[("withholding_rate",">",0)]</field>
+  </record>
+
+  <menuitem id="menu_retention_root" name="Retenciones" parent="account.menu_finance" sequence="50" action="action_account_move_with_retention"/>
+</odoo>
