@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fiscal_book,fiscal.book,model_fiscal_book,base.group_user,1,1,1,1
+access_res_partner_rif,res.partner,base.model_res_partner,base.group_user,1,1,1,1
+access_account_move_retention,account.move,account.model_account_move,account.group_account_user,1,1,1,1
