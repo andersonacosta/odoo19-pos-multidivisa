@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_partner_with_rif" model="ir.actions.act_window">
+        <field name="name">Partners with RIF</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('rif','!=',False)]</field>
+    </record>
+
+    <menuitem id="menu_partner_with_rif"
+              name="Socios con RIF"
+              parent="base.menu_base_partner"
+              action="action_partner_with_rif"
+              sequence="30"/>
+</odoo>
