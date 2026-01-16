@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<t t-name="PosCurrencyWidget" owl="1">
+<templates id="template" xml:space="preserve">
+  <t t-name="PosCurrencyWidget">
     <div class="pos-currency-widget">
-        <div class="primary-rate">
-            <t t-esc="state.primaryRate"/>
-        </div>
-        <div class="secondary-rate">
-            <t t-esc="state.secondaryRate"/>
-        </div>
-        <button class="toggle-mode" t-on-click="toggleMode">
-            Toggle Mode
-        </button>
+      <div class="primary-rate">
+        <span t-esc="state.statusIcon"/>
+        <t t-if="state.mode === 'auto'">
+          <span t-esc="state.primaryRate"/>
+        </t>
+        <t t-else="">
+          <input type="number" t-ref="input" t-on-input="(ev) => this.setManualRate(ev.target.value)" t-att-value="state.primaryRate"/>
+        </t>
+      </div>
+      <div class="secondary-rate">
+        <span t-esc="state.secondaryRate"/>
+      </div>
+      <button t-on-click="toggleMode">Cambiar modo</button>
     </div>
-</t>
+  </t>
+</templates>
