@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_res_partner_form_inherit_rif" model="ir.ui.view">
+            <field name="name">res.partner.form.rif</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Insert RIF field into partner form -->
+                <xpath expr="//sheet/notebook/page[1]/group" position="inside">
+                    <group string="Identificación Fiscal">
+                        <field name="rif"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_res_partner_search_inherit_rif" model="ir.ui.view">
+            <field name="name">res.partner.search.rif</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <!-- Allow search by RIF -->
+                <xpath expr="//filter[@name='Customer']" position="after">
+                    <filter string="RIF" name="rif" domain="['|',('rif','ilike',self),('rif','ilike',self)]" help="Buscar por RIF"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
