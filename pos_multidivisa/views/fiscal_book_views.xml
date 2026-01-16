@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_fiscal_book_tree" model="ir.ui.view">
+        <field name="name">fiscal.book.tree</field>
+        <field name="model">fiscal.book</field>
+        <field name="arch" type="xml">
+            <tree string="Fiscal Books">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="total_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_fiscal_book_form" model="ir.ui.view">
+        <field name="name">fiscal.book.form</field>
+        <field name="model">fiscal.book</field>
+        <field name="arch" type="xml">
+            <form string="Fiscal Book">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="invoice_ids" widget="many2many_tags"/>
+                        <field name="total_amount" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_fiscal_book" model="ir.actions.act_window">
+        <field name="name">Fiscal Books</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fiscal.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_fiscal_book_root" name="Fiscal Books" parent="account.menu_finance" sequence="100"/>
+    <menuitem id="menu_fiscal_book" name="Fiscal Books" parent="menu_fiscal_book_root" action="action_fiscal_book" sequence="10"/>
+</odoo>
