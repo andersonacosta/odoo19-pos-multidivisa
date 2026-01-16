@@ -17,6 +17,8 @@ ajustando listas de precios, visualización y referencias BCV sin afectar la con
         'data/ir_cron.xml',
         'views/res_config_settings_views.xml',
         'views/fiscal_book_views.xml',
+        'views/res_partner_views.xml',
+        'views/account_move_views.xml',
     ],
     'qweb': [
         'static/src/xml/pos_currency_widget.xml',
